@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RecipeTester</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="padding-top: 50px;">
+
+    <nav class="nav navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">RecipeTester</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <% if flash[:header_message] %>
+            <div class="alert alert-success"><%= flash[:header_message] %></div>
+        <% end %>
+        <%= yield %>
+    </div>
+
+</body>
+</html>
